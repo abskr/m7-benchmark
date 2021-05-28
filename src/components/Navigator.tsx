@@ -3,7 +3,6 @@ import {Button, FormControl, Form, Modal} from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../store/index';
 import styled from 'styled-components';
-import { setAlert } from '../store/actions/alert';
 import { getWeather, setLoading, setErrorFalse } from '../store/actions/weather'
 
 const Navigator = () => {
@@ -26,9 +25,6 @@ const Navigator = () => {
   }
   const handleSubmit = (event : React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
-    if (cityInput.trim() === "" ){
-      return dispatch(setAlert("INPUT A CITY NAME"))
-    }
     dispatch(setLoading())
     dispatch(getWeather(cityInput, unitInput))
   }

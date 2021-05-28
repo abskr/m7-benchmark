@@ -18,6 +18,7 @@ const Homepage = (props: RouteComponentProps) => {
     useEffect(() => {
       dispatch(setLoading());
       dispatch(getWeather('Berlin',  'metric'));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
 
